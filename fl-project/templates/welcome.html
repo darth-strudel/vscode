@@ -1,0 +1,34 @@
+
+   
+{% extends "base.html" %}
+
+{% block title%} Welcome {% endblock %}
+
+   {% block content %}
+
+        <H1>Test template 11 jnja</H1>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Soluta eligendi quibusdam totam doloribus doloremque, 
+            ab nulla aliquam culpa, repellat id necessitatibus perspiciatis \
+            laborum non optio? Nobis consequatur maiores nostrum obcaecati?
+            </p>
+            <img src="/static/jonah.jpg" >
+
+            <h1><a href=" {{ url_for('add_card') }}"> fill this shit up</a></h1>
+
+            
+            <h2>FlashCard</h2>
+            <ul>
+                {% for card in cards  %}
+                <li>
+                    <a href=" {{ url_for('card_view', index=loop.index0) }}">
+                        {{ card.question }}
+                    </a>
+                </li>
+                {% endfor %}
+
+
+            </ul>
+
+    {% endblock %}
